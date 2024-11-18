@@ -1,0 +1,19 @@
+<!-- app/templates/auth/fotos/foto.html -->
+
+{% import "bootstrap4/form.html" as wtf %}
+{% import "bootstrap4/utils.html" as utils %}
+{% extends "base.html" %}
+{% block title %}
+  {{ title }}
+{% endblock %}
+{% block content %}
+  {{ utils.render_messages() }}
+  {% if add_foto %}
+    <h1>{{ title }}</h1>
+  {% else %}
+    <h1>Edit Foto</h1>
+  {% endif %}
+  <br/>
+  {{ wtf.render_form(form) }}
+{% endblock %}
+

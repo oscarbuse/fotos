@@ -1,0 +1,102 @@
+:root {
+    --global-font-size: 16px;
+    --small-font-size: 14px;
+    --global-font-color: #bbb;
+    --global-alert-color: red;
+    --global-line-height: 1.6em;
+    --global-space: 10px;
+    --font-stack: Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;
+    --mono-font-stack: Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;
+    --background-color: #000;
+    --page-width: 70em;
+    --font-color: #eee;
+    --invert-font-color: #fff;
+    --primary-color: #1a95ff;
+    --secondary-color: #fff;
+    --error-color: #d20962;
+    --progress-bar-background: #727578;
+    --progress-bar-fill: #151515;
+    --code-bg-color: #e8eff2;
+    --input-style: solid;
+    --display-h1-decoration: none
+}
+
+* {
+    box-sizing: border-box;
+    text-rendering: geometricPrecision
+}
+
+::-moz-selection {
+    background: var(--primary-color);
+    color: var(--invert-font-color)
+}
+
+::selection {
+    background: var(--primary-color);
+    color: var(--invert-font-color)
+}
+
+body {
+    font-size: var(--global-font-size);
+    color: #eee;
+    line-height: var(--global-line-height);
+    margin: 0;
+    font-family: var(--font-stack);
+    word-wrap: break-word;
+    background-color: var(--background-color)
+}
+
+.container {
+    max-width: var(--page-width)
+}
+
+.container,.container-fluid {
+    margin: 0 auto;
+    padding: 0 calc(var(--global-space) * 2)
+}
+
+@media only screen and (min-width: 850px) {
+  .image-gallery {overflow: auto; margin-left: -1%!important;}
+  .image-gallery li {float: left; display: block; margin: 0 0 1% 1%; width: 31%;}
+  .image-gallery li a {text-decoration: none!important; color: var(--global-font-color)}
+  .image-gallery li a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0; font-size: var(--small-font-size)}
+  .image-gallery li a img {width: 100%; display: block;}
+}
+
+
+a {
+    cursor: pointer;
+    color: var(--primary-color);
+    text-decoration: none
+}
+
+.centertext {
+  font-size: 1em;
+  color: var(--global-font-color)
+}
+
+.alert {
+  font-size: 1em;
+  color: var(--global-alert-color)
+}
+
+
+.footer {
+    clear: both;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--secondary-color);
+    color: var(--global-font-color)
+}
+
+@media only screen and (max-width: 850px) {
+    :root {
+        --global-font-size: 14px;
+    }
+    .image-gallery { margin-left: 0;padding: 0}
+    .image-gallery li {list-style-type: none}
+    .image-gallery li a {color: var(--global-font-color)}
+    .image-gallery li a span {font-size: var(--small-font-size)}
+
+    /* .image-gallery li a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0; font-size: var(small-font-size);} */
+}

@@ -1,0 +1,6 @@
+*.pyc
+instance/config.py
+migrations
+app/static/data
+bup
+

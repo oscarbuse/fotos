@@ -1,0 +1,15 @@
+<!-- app/templates/home/index.html -->
+
+{% extends "base.html" %}
+{% block content %}
+<ul class="image-gallery">
+{% for foto in fotos %}
+<li>
+  <a href="/static/data/{{foto.main_category}}/__{{foto.image_filename}}" data-lightbox="{{category}}" data-title="{{foto.title}}" data-comment="{{foto.comment}}" exif-data="{{foto.exif_data}}">
+    <img src="/static/data/{{foto.main_category}}/thumb.{{foto.image_filename}}" id="img{{ loop.index }}">
+    <span>{{foto.title}}</span>
+  </a>
+</li>
+{% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,34 @@
+<!-- app/templates/auth/fotos/fotos.html -->
+
+{% import "bootstrap4/utils.html" as utils %}
+{% extends "base.html" %}
+{% block title %}
+  {{ title }}
+{% endblock %}
+{% block content %}
+{{ utils.render_messages() }}
+<br>
+<a href="{{ url_for('auth.add_foto') }}">Add foto</a>
+<br>
+  <table>
+    <thead>
+      <tr>
+        <th>Foto filename</th>
+        <th>Title</th>
+        <th>Edit</th>
+        <th>Delete</th>
+     </tr>
+    </thead>
+    <tbody>
+    {% for foto in fotos %}
+      <tr>
+        <td> {{ foto.image_filename }} </td>
+        <td> {{ foto.title }} </td>
+        <td> <a href="{{ url_for('auth.edit_foto', foto_id=foto.id) }}">Edit</a> </td>
+        <td> <a href="{{ url_for('auth.delete_foto', foto_id=foto.id) }}">Delete</a> </td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
+

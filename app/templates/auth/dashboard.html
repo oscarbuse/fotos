@@ -1,0 +1,13 @@
+<!-- app/templates/home/dashboard.html -->
+{% import "bootstrap4/utils.html" as utils %}
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<br>
+{{ utils.render_messages() }}
+<br>
+<h1>Admin</h1>
+<ul>
+<li><a href="/web/auth/fotos/add">Add foto</a></li>
+</ul>
+{% endblock %}
